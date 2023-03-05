@@ -7,7 +7,7 @@
 
 ## Stack
 
-Programming language - Go (v1.19.4)
-Database - PostgreSQL
-API - REST
-Building recipes - Makefile
+- Programming language - Go (v1.19.4)
+- Database - PostgreSQL
+- API - REST
+- Building recipes - Makefile
