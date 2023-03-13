@@ -2,8 +2,8 @@
 
 ## Development
 
-1. Make code changes
-1. Run the backend with `make run`
+1. Run database `make database`
+1. Run the backend `make run`
 
 ## Stack
 

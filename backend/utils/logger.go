@@ -6,7 +6,7 @@ import (
 	"go.uber.org/zap/zapcore"
 )
 
-var Logger *zap.Logger
+var Logger *zap.SugaredLogger
 
 func InitializeLogger() {
 	config := zap.NewProductionEncoderConfig()
@@ -24,6 +24,6 @@ func InitializeLogger() {
 		zapcore.NewCore(consoleEncoder, zapcore.AddSync(os.Stdout), defaultLogLevel),
 	)
 
-	Logger = zap.New(core, zap.AddCaller(), zap.AddStacktrace(zapcore.ErrorLevel))
+	Logger = zap.New(core, zap.AddCaller(), zap.AddStacktrace(zapcore.ErrorLevel)).Sugar()
 	defer Logger.Sync() // flushes buffer, if any
 }
