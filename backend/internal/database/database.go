@@ -31,7 +31,7 @@ func CreateDatabaseInstance(connectionString string) *Database {
 		panic(fmt.Sprintf("Failed creating database instance: %s", err))
 	}
 
-	utils.Logger.Infow("Successfully created database instance.")
+	utils.Logger.Info("Successfully created database instance.")
 	return &Database{
 		DB: database,
 	}
@@ -49,7 +49,7 @@ func (db *Database) MustPrepare(query string) *Statement {
 func (db *Database) CloseConnection() {
 	err := db.DB.Close()
 	if err != nil {
-		utils.Logger.Errorw("Closing database connection failed.")
+		utils.Logger.Error("Closing database connection failed.")
 	}
 }
 
